@@ -1,0 +1,47 @@
+
+无错误样本
+BIO TIME
+该领域无unseen slot
+该领域无seen slot
+final unseen f1 score:0
+final seen f1 score:0
+processed 18702 tokens with 5089 phrases; found: 4470 phrases; correct: 3011.
+{'': Metrics(tp=3011, fp=1459, fn=2078, prec=0.6736017897091723, rec=0.5916683041854981, fscore=0.6299822157129407)}
+FINAL result:
+restaurant_type
+{'cuisine': 12, 'restaurant_name': 63, 'city': 34, 'timeRange': 17, 'sort': 21, 'state': 2, 'party_size_number': 1}
+state
+{'country': 26, 'sort': 2, 'city': 1, 'restaurant_name': 2}
+served_dish
+{'city': 49, 'cuisine': 25, 'timeRange': 24, 'restaurant_name': 33, 'sort': 5, 'country': 1}
+restaurant_name
+{'city': 63, 'timeRange': 20, 'country': 2, 'sort': 1}
+party_size_description
+{'city': 25, 'restaurant_name': 30, 'timeRange': 2, 'cuisine': 1}
+cuisine
+{'city': 9, 'restaurant_name': 8, 'timeRange': 5, 'country': 16, 'sort': 1}
+city
+{'cuisine': 3, 'country': 5, 'timeRange': 1, 'restaurant_name': 4}
+party_size_number
+{'timeRange': 589, 'country': 18, 'sort': 8}
+timeRange
+{'restaurant_name': 2, 'country': 1}
+country
+{'cuisine': 1, 'city': 2}
+sort
+{'timeRange': 2}
+spatial_relation
+{'sort': 2}
+facility
+{'restaurant_type': 1, 'restaurant_name': 16, 'country': 8, 'timeRange': 4, 'cuisine': 3, 'city': 5, 'sort': 1}
+poi
+{'city': 40, 'restaurant_name': 11, 'timeRange': 4, 'country': 6, 'cuisine': 2}
+final unseen f1 score:4.57433290978399
+final seen f1 score:59.31721194879089
+processed 18702 tokens with 5089 phrases; found: 4470 phrases; correct: 1758.
+{'restaurant_type': Metrics(tp=1, fp=20, fn=1074, prec=0.047619047619047616, rec=0.0009302325581395349, fscore=0.0018248175182481753), 'state': Metrics(tp=348, fp=19, fn=61, prec=0.9482288828337875, rec=0.8508557457212714, fscore=0.8969072164948455), 'served_dish': Metrics(tp=0, fp=0, fn=197, prec=0, rec=0.0, fscore=0), 'restaurant_name': Metrics(tp=77, fp=595, fn=192, prec=0.11458333333333333, rec=0.2862453531598513, fscore=0.1636556854410202), 'party_size_description': Metrics(tp=0, fp=0, fn=239, prec=0, rec=0.0, fscore=0), 'cuisine': Metrics(tp=12, fp=175, fn=158, prec=0.06417112299465241, rec=0.07058823529411765, fscore=0.06722689075630253), 'city': Metrics(tp=363, fp=381, fn=49, prec=0.4879032258064516, rec=0.8810679611650486, fscore=0.6280276816608996), 'party_size_number': Metrics(tp=0, fp=18, fn=840, prec=0.0, rec=0.0, fscore=0), 'timeRange': Metrics(tp=484, fp=944, fn=48, prec=0.3389355742296919, rec=0.9097744360902256, fscore=0.49387755102040826), 'country': Metrics(tp=251, fp=120, fn=25, prec=0.6765498652291105, rec=0.9094202898550725, fscore=0.7758887171561052), 'sort': Metrics(tp=5, fp=414, fn=158, prec=0.011933174224343675, rec=0.03067484662576687, fscore=0.017182130584192438), 'spatial_relation': Metrics(tp=217, fp=25, fn=44, prec=0.8966942148760331, rec=0.8314176245210728, fscore=0.8628230616302187), 'facility': Metrics(tp=0, fp=0, fn=129, prec=0, rec=0.0, fscore=0), 'poi': Metrics(tp=0, fp=1, fn=117, prec=0.0, rec=0.0, fscore=0)}
+best f1 score util now: 0
+BookRestaurant
+2021-07-20 01:56:41
+Eval on test set.BIO Slot F1 Score: 62.9982, Final Slot F1 Score: 36.7821.
+------------------------------------------------------------

@@ -1,0 +1,24 @@
+BIO stage:
+processed 11269 tokens with 3480 phrases; found: 3057 phrases; correct: 1905.
+{'': Metrics(tp=1905, fp=1152, fn=1575, prec=0.6231599607458292, rec=0.5474137931034483, fscore=0.5828361633776963)}
+FINAL result:
+final unseen f1 score:3.0162412993039442
+final seen f1 score:42.22776392352453
+processed 11269 tokens with 3480 phrases; found: 3056 phrases; correct: 1042.
+{'sort': Metrics(tp=16, fp=19, fn=256, prec=0.45714285714285713, rec=0.058823529411764705, fscore=0.10423452768729642), 'music_item': Metrics(tp=368, fp=138, fn=259, prec=0.7272727272727273, rec=0.5869218500797448, fscore=0.649602824360106), 'artist': Metrics(tp=533, fp=274, fn=408, prec=0.6604708798017348, rec=0.5664187035069076, fscore=0.6098398169336385), 'year': Metrics(tp=20, fp=72, fn=469, prec=0.21739130434782608, rec=0.0408997955010225, fscore=0.06884681583476764), 'genre': Metrics(tp=0, fp=19, fn=113, prec=0.0, rec=0.0, fscore=0), 'service': Metrics(tp=3, fp=38, fn=591, prec=0.07317073170731707, rec=0.005050505050505051, fscore=0.009448818897637795), 'playlist': Metrics(tp=99, fp=1401, fn=25, prec=0.066, rec=0.7983870967741935, fscore=0.12192118226600984), 'album': Metrics(tp=2, fp=45, fn=151, prec=0.0425531914893617, rec=0.013071895424836602, fscore=0.019999999999999997), 'track': Metrics(tp=1, fp=8, fn=166, prec=0.1111111111111111, rec=0.005988023952095809, fscore=0.011363636363636364)}
+target domain:PlayMusic
+2021-07-22 19:05:23
+Eval on test set.BIO Slot F1 Score: 58.2836, Final Slot F1 Score: 31.8849.
+------------------------------------------------------------
+BIO stage:
+processed 11269 tokens with 3480 phrases; found: 3286 phrases; correct: 2050.
+{'': Metrics(tp=2050, fp=1236, fn=1430, prec=0.6238587948874011, rec=0.5890804597701149, fscore=0.605971031628732)}
+FINAL result:
+final unseen f1 score:0
+final seen f1 score:45.145164391463176
+processed 11269 tokens with 3480 phrases; found: 3281 phrases; correct: 1174.
+{'sort': Metrics(tp=12, fp=36, fn=260, prec=0.25, rec=0.04411764705882353, fscore=0.075), 'music_item': Metrics(tp=418, fp=171, fn=209, prec=0.7096774193548387, rec=0.6666666666666666, fscore=0.6875), 'artist': Metrics(tp=660, fp=631, fn=281, prec=0.5112316034082107, rec=0.7013815090329437, fscore=0.5913978494623657), 'year': Metrics(tp=0, fp=10, fn=489, prec=0.0, rec=0.0, fscore=0), 'genre': Metrics(tp=0, fp=14, fn=113, prec=0.0, rec=0.0, fscore=0), 'service': Metrics(tp=0, fp=3, fn=594, prec=0.0, rec=0.0, fscore=0), 'playlist': Metrics(tp=84, fp=1225, fn=40, prec=0.06417112299465241, rec=0.6774193548387096, fscore=0.11723656664340545), 'album': Metrics(tp=0, fp=14, fn=153, prec=0.0, rec=0.0, fscore=0), 'track': Metrics(tp=0, fp=3, fn=167, prec=0.0, rec=0.0, fscore=0)}
+target domain:PlayMusic
+2021-07-22 23:00:19
+Eval on test set.BIO Slot F1 Score: 60.5971, Final Slot F1 Score: 34.7286.
+------------------------------------------------------------

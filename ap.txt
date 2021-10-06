@@ -1,0 +1,29 @@
+
+无错误样本
+BIO TIME
+该领域无unseen slot
+该领域无seen slot
+final unseen f1 score:0
+final seen f1 score:0
+processed 14228 tokens with 4186 phrases; found: 3039 phrases; correct: 2224.
+{'': Metrics(tp=2224, fp=815, fn=1962, prec=0.7318196775255018, rec=0.5312947921643574, fscore=0.6156401384083044)}
+FINAL result:
+entity_name
+{'artist': 69, 'playlist': 53, 'music_item': 2}
+playlist_owner
+{'artist': 2}
+playlist
+{'artist': 116, 'entity_name': 39, 'music_item': 5, 'playlist_owner': 1}
+artist
+{'playlist': 17, 'entity_name': 2, 'music_item': 1}
+music_item
+{'playlist': 1}
+final unseen f1 score:3.20855614973262
+final seen f1 score:66.15357705090082
+processed 14228 tokens with 4186 phrases; found: 3027 phrases; correct: 1915.
+{'entity_name': Metrics(tp=24, fp=121, fn=432, prec=0.16551724137931034, rec=0.05263157894736842, fscore=0.07986688851913477), 'playlist_owner': Metrics(tp=0, fp=29, fn=866, prec=0.0, rec=0.0, fscore=0), 'playlist': Metrics(tp=829, fp=449, fn=714, prec=0.6486697965571205, rec=0.5372650680492547, fscore=0.587734845799362), 'artist': Metrics(tp=493, fp=459, fn=106, prec=0.5178571428571429, rec=0.8230383973288815, fscore=0.63571889103804), 'music_item': Metrics(tp=569, fp=54, fn=153, prec=0.913322632423756, rec=0.7880886426592798, fscore=0.846096654275093)}
+best f1 score util now: 0
+AddToPlaylist
+2021-07-19 20:31:39
+Eval on test set.BIO Slot F1 Score: 61.5640, Final Slot F1 Score: 53.0986.
+------------------------------------------------------------

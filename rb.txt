@@ -1,0 +1,24 @@
+BIO stage:
+processed 13639 tokens with 5880 phrases; found: 3559 phrases; correct: 1710.
+{'': Metrics(tp=1710, fp=1849, fn=4170, prec=0.48047204270862603, rec=0.29081632653061223, fscore=0.36232651763958046)}
+FINAL result:
+final unseen f1 score:19.119332132918647
+final seen f1 score:36.57142857142857
+processed 13639 tokens with 5880 phrases; found: 3554 phrases; correct: 1192.
+{'object_select': Metrics(tp=2, fp=8, fn=778, prec=0.2, rec=0.002564102564102564, fscore=0.005063291139240506), 'object_type': Metrics(tp=477, fp=154, fn=270, prec=0.7559429477020603, rec=0.6385542168674698, fscore=0.6923076923076923), 'rating_value': Metrics(tp=572, fp=1166, fn=985, prec=0.3291139240506329, rec=0.3673731535003211, fscore=0.3471927162367223), 'best_rating': Metrics(tp=10, fp=1, fn=839, prec=0.9090909090909091, rec=0.011778563015312132, fscore=0.023255813953488375), 'rating_unit': Metrics(tp=0, fp=0, fn=914, prec=0, rec=0.0, fscore=0), 'object_name': Metrics(tp=131, fp=1033, fn=652, prec=0.11254295532646048, rec=0.1673052362707535, fscore=0.13456599897277863), 'object_part_of_series_type': Metrics(tp=0, fp=0, fn=250, prec=0, rec=0.0, fscore=0)}
+target domain:RateBook
+2021-07-22 20:51:18
+Eval on test set.BIO Slot F1 Score: 36.2327, Final Slot F1 Score: 25.2703.
+------------------------------------------------------------
+BIO stage:
+processed 13639 tokens with 5880 phrases; found: 3503 phrases; correct: 1761.
+{'': Metrics(tp=1761, fp=1742, fn=4119, prec=0.5027119611761347, rec=0.29948979591836733, fscore=0.37535969306192046)}
+FINAL result:
+final unseen f1 score:17.659372026641297
+final seen f1 score:35.19417475728155
+processed 13639 tokens with 5880 phrases; found: 3495 phrases; correct: 1189.
+{'object_select': Metrics(tp=0, fp=6, fn=780, prec=0.0, rec=0.0, fscore=0), 'object_type': Metrics(tp=492, fp=440, fn=255, prec=0.5278969957081545, rec=0.6586345381526104, fscore=0.586063132817153), 'rating_value': Metrics(tp=50, fp=41, fn=1507, prec=0.5494505494505495, rec=0.03211303789338472, fscore=0.06067961165048544), 'best_rating': Metrics(tp=414, fp=387, fn=435, prec=0.5168539325842697, rec=0.4876325088339223, fscore=0.5018181818181818), 'rating_unit': Metrics(tp=0, fp=4, fn=914, prec=0.0, rec=0.0, fscore=0), 'object_name': Metrics(tp=233, fp=1425, fn=550, prec=0.1405307599517491, rec=0.29757343550446996, fscore=0.19090536665301105), 'object_part_of_series_type': Metrics(tp=0, fp=3, fn=250, prec=0.0, rec=0.0, fscore=0)}
+target domain:RateBook
+2021-07-23 00:22:47
+Eval on test set.BIO Slot F1 Score: 37.5360, Final Slot F1 Score: 25.3653.
+------------------------------------------------------------
