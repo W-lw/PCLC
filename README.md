@@ -75,7 +75,7 @@ python slu_test.py --model_path ./experiments/ct/pm_0/best_model.pth --model_typ
 
 - More details about the configurations can be found at [config.py](https://github.com/W-lw/PCLC/blob/main/config.py)
 - A full set of commands can be found in [run.sh](https://github.com/W-lw/PCLC/blob/main/run.sh)
-- All the models can be downloaded [here]()  to reproduce our results.
+- All the models can be downloaded [here](https://drive.google.com/drive/folders/1LgchJphV5gjRJULZZVvTgCMt_E2Oo7OZ?usp=sharing)  to reproduce our results.
 
 ## Citation
 
