@@ -807,7 +807,7 @@ class FinalSlotNamePredictor(nn.Module):
                 context_feature_each_sample = self.context_projection(context_feature_each_sample)
                 pred_slotname_each_sample = torch.matmul(feature_each_sample, slot_embs_based_domain) # (num_slotname, slot_num)
                 pred_slotname_each_sample_context = torch.matmul(context_feature_each_sample, slot_embs_based_domain_context)
-                pred_slotname_each_sample = pred_slotname_each_sample + self.params.theta*pred_slotname_each_sample_context 
+                pred_slotname_each_sample = pred_slotname_each_sample + 0.1*pred_slotname_each_sample_context 
             pred_slotname_list.append(pred_slotname_each_sample)
 
         ### caculate the loss for slot name

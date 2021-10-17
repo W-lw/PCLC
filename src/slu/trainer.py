@@ -73,7 +73,7 @@ class SLUTrainer(object):
 
         elif self.params.use_final_predictor:
             if context_contrastive_loss is not None:
-                loss_total = loss_slotname + self.params.alpha*slot_contrastive_loss + self.params.beta*context_contrastive_loss
+                loss_total = loss_slotname + self.params.alpha*slot_contrastive_loss + 0.1*context_contrastive_loss
             else:
                 loss_total = loss_slotname + self.params.alpha*slot_contrastive_loss 
         else:
