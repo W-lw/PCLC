@@ -21,8 +21,6 @@ class FormatError(Exception):
 
 Metrics = namedtuple('Metrics', 'tp fp fn prec rec fscore')
 
-from preprocess.gen_embeddings_for_slu import unseen_slot,seen_slot
-
 class EvalCounts(object):
     def __init__(self):
         self.correct_chunk = 0    # number of correctly identified chunks
@@ -173,11 +171,6 @@ def calculate_metrics(correct, guessed, total):
     f = 0 if p + r == 0 else 2 * p * r / (p + r)
     return Metrics(tp, fp, fn, p, r, f)
 
-def calcualate_f1_score(tp, fp, fn):
-    p = 0 if tp + fp == 0 else 1.*tp / (tp + fp)
-    r = 0 if tp + fn == 0 else 1.*tp / (tp + fn)
-    f = 0 if p + r == 0 else 2 * p * r / (p + r)
-    return f
 
 def metrics(counts):
     """
@@ -190,96 +183,16 @@ def metrics(counts):
         c.correct_chunk, c.found_guessed, c.found_correct
     )
     by_type = {}
-    unseen_tp = 0
-    unseen_fp = 0
-    unseen_fn = 0
-    unseen_count = 0
-    seen_tp = 0
-    seen_fp = 0
-    seen_fn = 0
-    seen_count = 0
+
     for t in uniq(list(c.t_found_correct) + list(c.t_found_guessed)):
         by_type[t] = calculate_metrics(
             c.t_correct_chunk[t], c.t_found_guessed[t], c.t_found_correct[t]
         )
-    # for t in uniq(list(c.t_found_correct) + list(c.t_found_guessed)):
-    #     # print(t)
-    #     if t not in c.t_found_transition.keys():
-    #         print("no error samples")
-    #     else:
-    #         print(c.t_found_transition[t])
-    #         continue
-    BIO_tag = True  # check if at the BIO stage
-    for slots in by_type.keys():
-        p = by_type[slots]
-        if slots in unseen_slot:
-            unseen_count += 1
-            unseen_tp += getattr(p,"tp")
-            unseen_fp += getattr(p,"fp")
-            unseen_fn += getattr(p,"fn")
-            
-        elif slots in seen_slot:
-            seen_count +=1
-            seen_tp += getattr(p,"tp")
-            seen_fp += getattr(p,"fp")
-            seen_fn += getattr(p,"fn")
-        else:
-            BIO_tag = False
-            print("BIO stage:")
-
-    if BIO_tag and unseen_count == 0:
-        print("no unseen slot in this domain")
-        final_unseen_f1_score = 0
-    else:        
-        final_unseen_f1_score = calcualate_f1_score(unseen_tp,unseen_fp,unseen_fn)
-    
-    if BIO_tag and seen_count == 0:
-        print("no seen slot in this domain")
-        final_seen_f1_score = 0
-    else:       
-        final_seen_f1_score = calcualate_f1_score(seen_tp,seen_fp,seen_fn)
-    
-    if BIO_tag:
-        print("final unseen f1 score:"+str(final_unseen_f1_score*100))
-        print("final seen f1 score:"+str(final_seen_f1_score*100))
 
     return overall, by_type
 
 
-from sklearn.metrics import confusion_matrix
-import numpy as np
-import matplotlib.pyplot as plt
-
-def report_confusion_matrix(counts:EvalCounts,params):
-    all_labels = list(set(counts.correct_chunk_list)|set(counts.guessed_chunk_list))
-    all_labels.sort()
-    labels2idx = {x:i for i, x in enumerate(all_labels)}
-    predicts = np.array([labels2idx[x] for x in counts.guessed_chunk_list])
-    golds = np.array([labels2idx[x] for x in counts.correct_chunk_list])
-    
-    np.set_printoptions(threshold=np.inf)
-    cm = confusion_matrix(golds, predicts)
-    plot_confusion_matrix(cm, list(labels2idx.keys()), "./test_image/transfer/res_"+params.tgt_dm+".png", True)
-
-import itertools
-
-def plot_confusion_matrix(cm,classes, savename, normalize=False, title=f'Confusion Matrix', figsize=(12,9), cmap=plt.cm.Blues):
-    if normalize:
-        cm = cm.astype("float") / cm.sum(axis=1)[:,np.newaxis]
-    np.set_printoptions(precision=2)
-    plt.figure(figsize=figsize)
-    plt.imshow(cm, interpolation='nearest', cmap=cmap)
-    plt.title(title)
-    plt.colorbar()
-    tick_marks = np.arange(len(classes))
-    plt.xticks(tick_marks, classes, rotation=45)# align="center")
-    plt.yticks(tick_marks, classes)
-    plt.ylabel("true")
-    plt.xlabel("pred")
-    plt.savefig(savename)
-
-
-def report(counts, params,out=None):
+def report(counts, out=None):
     if out is None:
         out = sys.stdout
 
@@ -321,7 +234,7 @@ def end_of_chunk(prev_tag, tag, prev_type, type_):
 
     return chunk_end
 
-def  start_of_chunk(prev_tag, tag, prev_type, type_):
+def start_of_chunk(prev_tag, tag, prev_type, type_):
     # check if a chunk started between the previous and current word
     # arguments: previous and current chunk tags, previous and current types
     chunk_start = False
@@ -345,16 +258,7 @@ def  start_of_chunk(prev_tag, tag, prev_type, type_):
 
     return chunk_start
 
-def main(argv):
-    args = parse_args(argv[1:])
 
-    if args.file is None:
-        counts = evaluate(sys.stdin, args)
-    else:
-        with open(args.file) as f:
-            counts = evaluate(f, args)
-    report(counts)
-
-def conll2002_measure(params,lines, verbose=False):
+def conll2002_measure(lines):
     counts = evaluate(lines, None)
-    return report(counts,params)
+    return report(counts)
