@@ -56,13 +56,13 @@ python slu_baseline.py --exp_name ct --exp_id pm_0 --bidirection --freeze_emb --
 Test `PCLC` on the target domain `PlayMusic` :
 
 ```
-python slu_test.py --model_path ./experiments/path_to_model/pm_0/best_model.pth --model_type coach --n_samples 0 --tgt_dm PlayMusic
+python slu_test.py --model_path ./experiments/path_to_model/pm_0/best_model.pth --model_type pclc --n_samples 0 --tgt_dm PlayMusic
 ```
 
 Test `PCLC` on seen and unseen slots for the target domain `PlayMusic`
 
 ```
-python slu_test.py --model_path ./experiments/path_to_model/pm_0/best_model.pth --model_type coach --n_samples 0 --tgt_dm PlayMusic --test_mode seen_unseen
+python slu_test.py --model_path ./experiments/path_to_model/pm_0/best_model.pth --model_type pclc --n_samples 0 --tgt_dm PlayMusic --test_mode seen_unseen
 ```
 
 Test baseline model `CT` on the target domain `PlayMusic`:
