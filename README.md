@@ -42,7 +42,7 @@ python slu_main.py --exp_name path_to_model --exp_id pm_0   --bidirection --free
 
 Train `PCLC` in  `few-shot` setting for the target domain `PlayMusic`:
 ```
-python slu_main.py --exp_name path_to_model --exp_id pm_0   --bidirection --freeze_emb --tgt_dm PlayMusic  --n_samples 50 --tr  --emb_file ./data/snips/emb/slu_word_char_embs_with_slotembs.npy
+python slu_main.py --exp_name path_to_model --exp_id pm_50   --bidirection --freeze_emb --tgt_dm PlayMusic  --n_samples 50 --tr  --emb_file ./data/snips/emb/slu_word_char_embs_with_slotembs.npy
 ```
 
 Train  baseline model `CT` for the target domain `PlayMusic`:
