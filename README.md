@@ -22,7 +22,7 @@ We use [SNIPS](https://github.com/MiuLab/SlotGated-SLU/tree/master/data/snips) d
 
 ## Run
 
-#### Configuration
+### Configuration
 
 - `--tgt_dm:` Target domain
 - `--n_samples:` The number of samples in the target domain
@@ -32,7 +32,7 @@ We use [SNIPS](https://github.com/MiuLab/SlotGated-SLU/tree/master/data/snips) d
 - `--model_type:`Saved model type (e.g., pclc, ct, rzt)
 - `--test_mode:`Choose mode to test the model (e.g., testset, seen_unseen)
 
-#### Train
+### Train
 
 Train `PCLC` in  `zero-shot` setting for the target domain `PlayMusic`:
 
@@ -51,7 +51,7 @@ Train  baseline model `CT` for the target domain `PlayMusic`:
 python slu_baseline.py --exp_name ct --exp_id pm_0 --bidirection --freeze_emb --lr 1e-4 --hidden_dim 300 --tgt_dm PlayMusic --n_samples 0
 ```
 
-#### Test
+### Test
 
 Test `PCLC` on the target domain `PlayMusic` :
 
@@ -71,7 +71,7 @@ Test baseline model `CT` on the target domain `PlayMusic`:
 python slu_test.py --model_path ./experiments/ct/pm_0/best_model.pth --model_type ct --n_samples 0 --tgt_dm PlayMusic
 ```
 
-#### Notes
+### Notes
 
 - More details about the configurations can be found at [config.py](https://github.com/W-lw/PCLC/blob/main/config.py)
 - A full set of commands can be found in [run.sh](https://github.com/W-lw/PCLC/blob/main/run.sh)
