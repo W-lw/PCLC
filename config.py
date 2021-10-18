@@ -49,6 +49,8 @@ def get_params():
     # contrastiveSlotNamePredictor parameters
     parser.add_argument("--slot_hidden_dim", type=int, default=400, help="number of domain")
     parser.add_argument("--context_hidden_dim", type=int, default=400, help="number of domain")
+    parser.add_argument("--trs_hidden_dim", type=int, default=400, help="Dimension after combined into word level")
+    parser.add_argument("--trs_layers", type=int, default=1, help="Number of layers for transformer")
 
 
     # baseline
