@@ -168,7 +168,6 @@ class SLUTrainer(object):
  
         bin_result = conll2002_measure(bin_lines)
         bin_f1 = bin_result["fb1"]
-        print("FINAL result:")
         final_result = conll2002_measure(final_lines)
         final_f1 = final_result["fb1"]
        
