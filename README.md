@@ -82,7 +82,11 @@ python slu_test.py --model_path ./experiments/ct/pm_0/best_model.pth --model_typ
  If you use any source codes or ideas included in this repository for your work, please cite the following paper.
 
 ```
-
+@article{wang2021bridge,
+  title={Bridge to Target Domain by Prototypical Contrastive Learning and Label Confusion: Re-explore Zero-Shot Learning for Slot Filling},
+  author={Wang, Liwen and Li, Xuefeng and Liu, Jiachi and He, Keqing and Yan, Yuanmeng and Xu, Weiran},
+  journal={arXiv preprint arXiv:2110.03572},
+  year={2021}
+}
 ```
-
 
