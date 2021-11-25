@@ -44,6 +44,7 @@ def get_params():
     parser.add_argument("--temperature", type=float, default=0.9)
     parser.add_argument("--alpha", type=float, default=0.5)
     parser.add_argument("--smooth_factor", type=float, default=0.6)
+    parser.add_argument("--theta", type=float, default=0.5)
 
 
     # contrastiveSlotNamePredictor parameters
