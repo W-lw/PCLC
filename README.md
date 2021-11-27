@@ -34,41 +34,41 @@ We use [SNIPS](https://github.com/MiuLab/SlotGated-SLU/tree/master/data/snips) d
 
 ### Train
 
-Train `PCLC` in  `zero-shot` setting for the target domain `PlayMusic`:
+Train `PCLC` in  `zero-shot` setting for the target domain `GetWeather`:
 
 ```
-python slu_main.py --exp_name path_to_model --exp_id pm_0   --bidirection --freeze_emb --tgt_dm PlayMusic  --n_samples 0 --tr  --emb_file ./data/snips/emb/slu_word_char_embs_with_slotembs.npy
+python slu_main.py --exp_name path_to_model --exp_id pm_0   --bidirection --freeze_emb --tgt_dm GetWeather  --n_samples 0 --tr  --emb_file ./data/snips/emb/slu_word_char_embs_with_slotembs.npy
 ```
 
-Train `PCLC` in  `few-shot` setting for the target domain `PlayMusic`:
+Train `PCLC` in  `few-shot` setting for the target domain `GetWeather`:
 ```
-python slu_main.py --exp_name path_to_model --exp_id pm_50   --bidirection --freeze_emb --tgt_dm PlayMusic  --n_samples 50 --tr  --emb_file ./data/snips/emb/slu_word_char_embs_with_slotembs.npy
+python slu_main.py --exp_name path_to_model --exp_id pm_50   --bidirection --freeze_emb --tgt_dm GetWeather  --n_samples 50 --tr  --emb_file ./data/snips/emb/slu_word_char_embs_with_slotembs.npy
 ```
 
-Train  baseline model `CT` for the target domain `PlayMusic`:
+Train  baseline model `CT` for the target domain `GetWeather`:
 
 ```
-python slu_baseline.py --exp_name ct --exp_id pm_0 --bidirection --freeze_emb --lr 1e-4 --hidden_dim 300 --tgt_dm PlayMusic --n_samples 0
+python slu_baseline.py --exp_name ct --exp_id pm_0 --bidirection --freeze_emb --lr 1e-4 --hidden_dim 300 --tgt_dm GetWeather --n_samples 0
 ```
 
 ### Test
 
-Test `PCLC` on the target domain `PlayMusic` :
+Test `PCLC` on the target domain `GetWeather` :
 
 ```
-python slu_test.py --model_path ./experiments/path_to_model/pm_0/best_model.pth --model_type pclc --n_samples 0 --tgt_dm PlayMusic
+python slu_test.py --model_path ./experiments/path_to_model/pm_0/best_model.pth --model_type pclc --n_samples 0 --tgt_dm GetWeather
 ```
 
-Test `PCLC` on seen and unseen slots for the target domain `PlayMusic`
+Test `PCLC` on seen and unseen slots for the target domain `GetWeather`
 
 ```
-python slu_test.py --model_path ./experiments/path_to_model/pm_0/best_model.pth --model_type pclc --n_samples 0 --tgt_dm PlayMusic --test_mode seen_unseen
+python slu_test.py --model_path ./experiments/path_to_model/pm_0/best_model.pth --model_type pclc --n_samples 0 --tgt_dm GetWeather --test_mode seen_unseen
 ```
 
-Test baseline model `CT` on the target domain `PlayMusic`:
+Test baseline model `CT` on the target domain `GetWeather`:
 
 ```
-python slu_test.py --model_path ./experiments/ct/pm_0/best_model.pth --model_type ct --n_samples 0 --tgt_dm PlayMusic
+python slu_test.py --model_path ./experiments/ct/pm_0/best_model.pth --model_type ct --n_samples 0 --tgt_dm GetWeather
 ```
 
 ### Notes
